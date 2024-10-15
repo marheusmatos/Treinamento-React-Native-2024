@@ -1,4 +1,4 @@
-import { Dimensions, StyleSheet } from "react-native";
+import { Dimensions, StyleSheet, TextInput } from "react-native";
 
 export const styles = StyleSheet.create({
     container: {
@@ -63,7 +63,18 @@ export const styles = StyleSheet.create({
         fontSize: 19,
         fontWeight: 'bold',
       },
-    
+      TextBtn:{
+        color:'white',
+        backgroundColor:' #FF6600',
+        fontWeight: 700,
+        textAlign:'center',
+        padding:10,
+        marginBottom:20,
+      },
+      TextInput:{
+        padding:10,
+        borderRadius:30,
+      },
       footer: {
         flex: 0.125,
         backgroundColor: '#FF6600',

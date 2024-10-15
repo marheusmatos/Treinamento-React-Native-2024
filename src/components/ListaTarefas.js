@@ -1,28 +1,22 @@
-import React, { useState } from "react";  // Adicionei o import do useState
+import { View, StyleSheet } from "react-native";
+import { ItemDaLista } from "./ItemDaLista.js";
 
-export const ListaTarefas = () => {
-  const [value, setValue] = useState("");  // Corrigi a capitalização de 'setValue'
+export function ListaTarefas ({itens, setaItens}) {
 
-  const submit = (e) => {
-    e.preventDefault();
-    console.log(value);
-  };
-
-  return (
-    <form className="ListaForm" onSubmit={submit}>
-      <label htmlFor="tarefa">Tarefa</label>
-      <input
-        type="text"
-        id="tarefa"
-        className="inputTarefa"
-        onChange={(e) => setValue(e.target.value)}  // Corrigi a capitalização de 'setValue'
-        value={value}  // Adicionei o value para ligar o input ao state
-      />
-
-      <label htmlFor="duracao">Duração</label>
-      <input type="text" id="duracao" className="inputDuracao" />
-
-      <button type="submit">Adicionar</button>
-    </form>
-  );
+    const mudaEstadoItem = (item) => {
+        item.estado = !item.estado;
+        setaItens([...itens])
+    };
+    return (
+        <View style={style.lista}>
+            {itens.map((item) => (
+                <ItemDaLista {...item} onPress={() => mudaEstadoItem(item)}/>
+            ))}
+        </View>
+    );
 };
+
+const style = StyleSheet.create({
+    lista: {
+    }
+});
