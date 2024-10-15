@@ -76,4 +76,11 @@ export const styles = StyleSheet.create({
         fontSize: 12,
         textAlign: 'center',
       },
+      input:{
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#FFF',
+        width: 300,
+        borderRadius: 20,
+      }
 });

@@ -2,22 +2,28 @@ import React, {useState} from 'react';
 import {View, Text, Image, TouchableOpacity, StyleSheet} from 'react-native';
 import { styles } from "./style"
 import Logo from "../../assets/logo.png"
+import { ListaTarefas } from '../../components/ListaTarefas';
 
 export default function Login() {
 
-    const [visible, setVisible] = useState(true);
 
+    const [visible, setVisible] = useState(true);
+    
     const toggleVisibility = () => {
         setVisible(!visible);
       };
 
     return (
+      
         <View style={styles.container}>
         <View style={styles.header}>
           <Text style={styles.headerTitle}>Serra Junior Engenharia</Text>
         </View>
   
         <View style={styles.main}>
+        <ListaTarefas/>
+
+
           {visible && (
             <View style={styles.card}>
               <Image
